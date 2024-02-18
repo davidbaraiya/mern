@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root{
+  --primary-color:#215cff;
+  --black-color: #111111;
+  --gray-color: #CBCBD4;
+  --white-color:#fff;
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -12,9 +20,84 @@ body{
   width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: var(--black-color);
+  color: white;
 }
-
+.main{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container{
+  max-width: 1140px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
 a{
   text-decoration: none;
-  color: initial ;
+  color: currentColor;
+}
+.pt{
+  padding-top: 60px;
+}
+.pb{
+  padding-bottom: 60px;
+}
+
+.btn{
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  outline: 0;
+  text-transform: capitalize;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+}
+.btn.outline{
+  background-color: transparent;
+  color: var(--primary-color);
+  padding: 7px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+}
+.btn:hover{
+  background-color: #0941da;
+}
+.btn.outline:hover{
+  color: var(--white-color);
+}
+
+input, textarea,
+input:focus, textarea:focus {
+  outline: none;
+}
+
+
+ /* main css  */
+.header{
+  color: var(--primary-color);
+}
+.header nav a{
+  position: relative;
+}
+.header nav a::before{
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  display: block;
+  height: 2px;
+  width: 0;  
+  background-color: var(--primary-color);
+  transition: all .3s ease-in-out;
+}
+.header nav a:hover::before,
+.header nav a.active::before{
+  width: 100%;  
+}
+.footer{
+  background-color: var(--primary-color);
+  margin-top: auto;
 }
